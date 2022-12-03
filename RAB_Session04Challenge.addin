@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Command RAB_Session04Challenge</Text>
+    <Description>This command create elements from model lines</Description>
+    <Assembly>RAB_Session04Challenge.dll</Assembly>
+    <FullClassName>RAB_Session04Challenge.Command_CreateElementsFromModelLines</FullClassName>
+    <ClientId>8474C80A-1AAD-4AFB-8276-68BE01D842DC</ClientId>
+    <VendorId>R-BIM Consulting</VendorId>
+    <VendorDescription>R-BIM a VDC/BIM Consultincy company</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>Application RAB_Session04Challenge</Name>
+    <Assembly>RAB_Session04Challenge.dll</Assembly>
+    <FullClassName>RAB_Session04Challenge.App</FullClassName>
+    <ClientId>52b38eae-ea61-4744-8827-299ca4f45fd2</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
