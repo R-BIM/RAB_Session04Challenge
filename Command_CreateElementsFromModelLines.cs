@@ -38,10 +38,12 @@ namespace RAB_Session04Challenge
             DuctType ductType = GetDuctTypeByName(doc, "Default");
             PipeType pipeType = GetPipetTypeByName(doc, "Default");
 
-            //Prompt the user to select elements
+            // 1. Prompt the user to select elements
             IList<Element> mySelection = uidoc.Selection.PickElementsByRectangle("Please, select elements by rectangle in the screen");
 
-            //Filter the elements for model curves
+            ///Filter the elements for model curves and add them to a new list
+            ///try to loop through  the myModelLine list rather than through mySelection list
+
             //Loop through filtered elements (mySelection list) and based on the line's line style create elements
             foreach (Element element in mySelection)
             {
@@ -61,6 +63,8 @@ namespace RAB_Session04Challenge
                         //Get the 3D points from geometry curve at the end of the curve
                         XYZ endPoint = curve.GeometryCurve.GetEndPoint(1);
 
+                        ///Try o udr swith statment (with multivariables check if possible in C# 7 or 8)
+                        
                         //Loop through the curves of the selection and If the line's line style name is "A-WALL" create "Generic 8" wall" wall
                         if (curve.CurveElementType == CurveElementType.ModelCurve && curve.LineStyle.Name == "A-WALL")
                         {
@@ -160,8 +164,8 @@ namespace RAB_Session04Challenge
         private Level GetLevelByName(Document doc, string level)
         {
             FilteredElementCollector lvlcollector = new FilteredElementCollector(doc)
-          //.OfClass(typeof(Level));
-          .OfCategory(BuiltInCategory.OST_Levels).WhereElementIsNotElementType();
+          .OfClass(typeof(Level));
+          //.OfCategory(BuiltInCategory.OST_Levels).WhereElementIsNotElementType();
 
             foreach (Level lvl in lvlcollector)
             {
